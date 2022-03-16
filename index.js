@@ -1,19 +1,22 @@
-function reverseString(str) {
-  return str.split("").reverse().join("");
-}
+var a = "hello";
+var b = "world";
+console.log(a.localeCompare(b)); // -1
 
-function reverseString2(str) {
-  return [...str].reverse().join("");
-}
-
-function reverseString3(str) {
-  let strRev = "";
-  for (let i = str.length - 1; i >= 0; i--) {
-    strRev += str[i];
+function strcmp(a, b) {
+  if (a === b) {
+    return 0;
   }
-  return strRev;
+  if (a > b) {
+    return 1;
+  }
+  return -1;
 }
+console.log(strcmp("hello", "world")); // -1
+console.log(strcmp("hello", "hello")); // 0
+console.log(strcmp("world", "hello")); // 1
 
-console.log(reverseString("string"));
-console.log(reverseString2("string"));
-console.log(reverseString3("string"));
+var arr = ["bananas", "cranberries", "apples"];
+arr.sort(function (a, b) {
+  return a.localeCompare(b);
+});
+console.log(arr);
