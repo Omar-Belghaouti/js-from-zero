@@ -1,4 +1,2 @@
-var s = "one, two, three, four, five";
-console.log(s.split(", "));
-
-console.log(s.split(", ").join("--"));
+var s = "some ∆≈ƒ unicode ¡TM£¢¢¢";
+console.log(s.charCodeAt(5)); // 8710
