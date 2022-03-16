@@ -1,17 +1,10 @@
-console.time("response in");
+console.log("%s has %d points", "Sam", 100);
 
-alert("Click to continue");
-console.timeEnd("response in");
+console.log("%cHello, World!", "color: blue; font-size: xx-large");
 
-alert("One more time");
-console.timeEnd("response in");
-
-var elms = document.getElementsByTagName("*");
-
-console.time("Loop time");
-
-for (let i = 0; i < 5000; i++) {
-  for (let j = 0; j < elms.length; j++) {}
-}
-
-console.timeEnd("Loop time");
+console.log(
+  "%cHello %cWorld%c!!", // string to be printed
+  "color: blue;", // applies color formatting to the 1st substring
+  "font-size: xx-large;", // applies font formatting to the 2nd substring
+  "/* no CSS rule*/" // does not apply any rule to the remaining substring
+);
