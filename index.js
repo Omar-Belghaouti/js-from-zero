@@ -1,4 +1,4 @@
-var str = "      some whitespaced string      ";
-console.log(str.trim());
+var s = "one, two, three, four, five";
+console.log(s.split(", "));
 
-console.log(str.trimEnd());
+console.log(s.split(", ").join("--"));
