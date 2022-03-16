@@ -1,2 +1,3 @@
-var age = prompt("How old are you?");
-console.log(age);
+if (confirm("Are you sure you want to delete this?")) {
+  console.log("Item deleted");
+}
