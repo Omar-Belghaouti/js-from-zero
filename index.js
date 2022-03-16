@@ -1,23 +1,33 @@
-console.log(Object.prototype.toString.call("String"));
+var hello = "Hello";
+var world = "world";
+var helloW = `${hello} ${world}`;
+console.log(helloW);
 
-console.log(Object.prototype.toString.call(42));
+var intString = String(32);
+var booleanString = String(true);
+var nullString = String(null);
+console.log(intString, booleanString, nullString);
 
-console.log(Object.prototype.toString.call(true));
+var intString2 = (5232).toString();
+var booleanString2 = false.toString();
+var objString = {}.toString();
+console.log(intString2, booleanString2, objString);
 
-console.log(Object.prototype.toString.call(Object()));
-console.log(Object.prototype.toString.call({}));
+console.log(String.fromCharCode(104, 101, 108, 108, 111));
 
-console.log(Object.prototype.toString.call(function () {}));
+var objectString = new String("Yes, I am a String object");
+console.log(typeof objectString);
+console.log(typeof objectString.valueOf());
 
-console.log(Object.prototype.toString.call(new Date()));
+var foo = "Foo";
+var bar = "Bar";
+console.log(foo + bar); // => "FooBar" console.log(foo + " " + bar); // => "Foo Bar"
+foo.concat(bar); // => "FooBar" "a".concat("b", " ", "d") // => "ab d"
 
-console.log(Object.prototype.toString.call(new RegExp()));
-console.log(Object.prototype.toString.call(/foo/));
+var string = "string";
+var number = 32;
+var boolean = true;
+console.log(string + number + boolean); // "string32true"
 
-console.log(Object.prototype.toString.call([]));
-
-console.log(Object.prototype.toString.call(null));
-
-console.log(Object.prototype.toString.call(undefined));
-
-console.log(Object.prototype.toString.call(Error()));
+console.log(`a\\b`);
+console.log(String.raw`a\\b`);
