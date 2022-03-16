@@ -1,4 +1,8 @@
-var s = "0123456789abcdefg";
-console.log(s.slice(0, 5)); // "01234"
-console.log(s.slice(5, 6)); // "5"
-console.log(s.slice(10)); // "abcdefg"
+var charCode = "😅".charCodeAt(); // The character code of 😅 is 55357
+console.log(charCode);
+
+var charCode2 = "ABCDE".charCodeAt(3); // The character code of "D" is 68
+console.log(charCode2);
+
+var codePoint = "😅".codePointAt();
+console.log(codePoint);
