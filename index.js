@@ -1,8 +1,32 @@
-function foo() {
-  console.trace("My log statement");
-}
+console.table(["Hello", "World"]);
 
-foo();
+console.table({ foo: "bar", bar: "baz" });
 
-var e = new Error("foo");
-console.log(e.stack);
+var personArr = [
+  {
+    personId: 123,
+    name: "Jhon",
+    city: "Melbourne",
+    phoneNo: "1234567890",
+  },
+  {
+    personId: 124,
+    name: "Amelia",
+    city: "Sydney",
+    phoneNo: "1234567890",
+  },
+  {
+    personId: 125,
+    name: "Emily",
+    city: "Perth",
+    phoneNo: "1234567890",
+  },
+  {
+    personId: 126,
+    name: "Abraham",
+    city: "Perth",
+    phoneNo: "1234567890",
+  },
+];
+
+console.table(personArr, ["name", "personId"]);
