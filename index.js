@@ -1,10 +1,13 @@
-var number1 = 5;
-number1 = 3;
-console.log(number1);
+var myInteger = 12;
+var myLong = 9310141419482;
+var myFloat = 5.5;
+var myDouble = 9310141419482.22;
 
-number1 = number1 + 5;
-number1 = number1 - 6;
-var number2 = number1 * 10;
-var number3 = number2 / number1;
+var myBoolean = true;
+var myBoolean2 = false;
 
-var myString = "I am a " + "string!";
+var myNotANumber = NaN;
+var NaN_Example = 0 / 0;
+
+var notDefined;
+var myNull = null;
