@@ -1,0 +1,19 @@
+{
+  "name": "js-from-zero",
+  "version": "1.0.0",
+  "description": "This repo is for learn javascript from zero to advanced",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "keywords": [
+    "javascript",
+    "js",
+    "advanced"
+  ],
+  "author": {
+    "email": "omarbelghaouti@gmail.com",
+    "name": "Omar Belghaouti"
+  },
+  "license": "MIT"
+}
