@@ -1,33 +1,23 @@
-function sum(...arguments) {
-  if (arguments.length === 1) {
-    const [firstArg] = arguments;
-    if (firstArg instanceof Array) {
-      return sum(...firstArg);
-    }
-  }
-  return arguments.reduce((a, b) => a + b);
-}
+console.log(Object.prototype.toString.call("String"));
 
-console.log(sum(1, 2, 3));
-console.log(sum([1, 2, 3]));
-console.log(sum(4));
+console.log(Object.prototype.toString.call(42));
 
-console.log(2 instanceof Number);
-console.log("abc" instanceof String);
-console.log(true instanceof Boolean);
-console.log(Symbol() instanceof Symbol);
+console.log(Object.prototype.toString.call(true));
 
-console.log([] instanceof Object, [] instanceof Array);
-console.log([].constructor === Object, [].constructor === Array);
+console.log(Object.prototype.toString.call(Object()));
+console.log(Object.prototype.toString.call({}));
 
-function isNumber(value) {
-  if (value === null || value === undefined) return false;
-  return value.constructor === Number;
-}
-console.log(isNumber(null), isNumber(undefined));
-console.log(
-  isNumber("abc"),
-  isNumber([]),
-  isNumber(() => 1)
-);
-console.log(isNumber(0), isNumber(Number("10.1")), isNumber(NaN));
+console.log(Object.prototype.toString.call(function () {}));
+
+console.log(Object.prototype.toString.call(new Date()));
+
+console.log(Object.prototype.toString.call(new RegExp()));
+console.log(Object.prototype.toString.call(/foo/));
+
+console.log(Object.prototype.toString.call([]));
+
+console.log(Object.prototype.toString.call(null));
+
+console.log(Object.prototype.toString.call(undefined));
+
+console.log(Object.prototype.toString.call(Error()));
