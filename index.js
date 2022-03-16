@@ -36,3 +36,5 @@ console.count(console.constructor.prototype);
 console.count(console.__proto__.constructor.prototype);
 console.count(Object.getPrototypeOf(console));
 console.count(null);
+
+console.clear();
