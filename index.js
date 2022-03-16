@@ -1,8 +1,6 @@
-console.log(Number.MAX_VALUE);
-console.log(Number.MAX_SAFE_INTEGER);
-console.log(Number.MIN_VALUE);
-console.log(Number.MIN_SAFE_INTEGER);
-console.log(Number.EPSILON);
-console.log(Number.POSITIVE_INFINITY);
-console.log(Number.NEGATIVE_INFINITY);
-console.log(Number.NaN);
+console.log("b" * 3);
+console.log("cde" - "e");
+console.log([1, 2, 3] * 2);
+console.log([2] * [3]);
+console.log("a" + "b");
+console.log(0 / 0);
