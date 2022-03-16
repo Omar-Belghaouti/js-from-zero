@@ -1,5 +1,2 @@
-var string = "Hello, World!";
-console.log(string.charAt(4));
-console.log(string[4]);
-
-console.log(string.charCodeAt(4));
+var x = `"Escaping " and ' can become very annoying`;
+// var text = "I feel \"high\""";
