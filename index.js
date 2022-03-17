@@ -1,11 +1,25 @@
-var date = Date();
-console.log(date);
+var date1 = new Date();
 
-date = new Date(749019369738);
-console.log(date);
+console.log(date1.toString());
 
-date = Date("2022-03-17T13:07:51.730Z");
-console.log(date);
+console.log(date1.toTimeString());
 
-date = new Date(2022, 2, 18);
-console.log(date);
+console.log(date1.toDateString());
+
+console.log(date1.toUTCString());
+
+console.log(date1.toISOString());
+
+console.log(date1.toGMTString());
+
+console.log(date1.toLocaleDateString());
+
+console.log(date1.toLocaleDateString(["zh", "en-US"]));
+
+var options = {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
+console.log(date1.toLocaleDateString([], options));
