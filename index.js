@@ -1,30 +1,26 @@
-var i = 0;
-if (i < 1) {
-  console.log("i is smaller than 1");
+const AnimalSays = {
+  dog() {
+    return "woof";
+  },
+  cat() {
+    return "meow";
+  },
+  lion() {
+    return "roar";
+  },
+  // ... other animals
+  default() {
+    return "moo";
+  },
+};
+
+function makeAnimalSpeak(animal) {
+  // Match the animal by type
+  const speak = AnimalSays[animal] || AnimalSays.default;
+  console.log(animal + " says " + speak());
 }
 
-if (i < 1) {
-  console.log("i is smaller than 1");
-} else {
-  console.log("i was not smaller than 1");
-}
-
-if (i < 1) {
-  console.log("i is smaller than 1");
-} else {
-  if (i < 2) {
-    console.log("i is smaller than 2");
-  } else {
-    console.log("none of the previous conditions was true");
-  }
-}
-
-if (i < 1) {
-  console.log("i is smaller than 1");
-} else if (i < 2) {
-  console.log("i is smaller than 2");
-} else {
-  console.log("none of the previous conditions was true");
-}
-
-if (i < 1) console.log("i is smaller than 1");
+makeAnimalSpeak("dog"); // => 'dog says woof'
+makeAnimalSpeak("cat"); // => 'cat says meow'
+makeAnimalSpeak("lion"); // => 'lion says roar'
+makeAnimalSpeak("snake"); // => 'snake says moo'
