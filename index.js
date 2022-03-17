@@ -1,35 +1,30 @@
-Object.is(1, 1); // true
-Object.is(+0, -0); // false
-Object.is(NaN, NaN); // true
-Object.is(true, "true"); // false
-Object.is(false, 0); // false
-Object.is(null, undefined); // false
-Object.is(1, "1"); // false
-Object.is([], []); // false
+1 < 2; // true
+2 <= 2; // true
+3 >= 5; // false
+true < false; // false (implicitly converted to numbers, 1 > 0)
 
-[1].includes(1); // true
-[+0].includes(-0); // true
-[NaN].includes(NaN); // true
-[true].includes("true"); // false
-[false].includes(0); // false
-[1].includes("1"); // false
-[null].includes(undefined); // false
-[[]].includes([]); // false
+"a" < "b"; // true
+"1" < "2"; // true
+"100" > "12"; // false ('100' is less than '12' lexicographically!)
 
-1 === 1; // true
-+0 === -0; // true
-NaN === NaN; // false
-true === "true"; // false
-false === 0; // false
-1 === "1"; // false
-null === undefined; // false
-[] === []; // false
+"1" < 2; // true
+"3" > 2; // true
+true > "2"; // false (true implicitly converted to number, 1 < 2
 
-1 == 1; // true
-+0 == -0; // true
-NaN == NaN; // false
-true == "true"; // false
-false == 0; // true
-1 == "1"; // true
-null == undefined; // true
-[] == []; // false
+1 < "abc"; // false
+1 > "abc"; // false
+
+1 > ""; // true
+1 < ""; // false
+1 > null; // true
+1 < null; // false
+1 > undefined; // false
+1 < undefined; // false
+
+new Date(2015) < 1479480185280; // true
+null > -1; //true
+({
+  toString: function () {
+    return 123;
+  },
+} > 122); //true
