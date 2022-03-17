@@ -1,14 +1,14 @@
-var filtered = [0, undefined, {}, null, "", true, 5].filter(Boolean);
-console.log(filtered);
+var people = [{ name: "bob" }, { name: "john" }];
+var bob = people.find((person) => person.name === "bob");
+console.log(bob);
 
-function startsWithLetterA(str) {
-  if (str && str[0].toLowerCase() == "a") {
-    return true;
+for (var i = 0; i < people.length; i++) {
+  if (people[i].name === "bob") {
+    break; // we found bob
   }
-  return false;
 }
-var str =
-  "Since Boolean is a native javascript function/constructor that takes [one optional parameter] and the filter method also takes a function and passes it the current array item as a parameter, you could read it like the following";
-var strArray = str.split(" ");
-var wordsStartsWithA = strArray.filter(startsWithLetterA); //["a", "and", "also", "a", "and", "array", "as"]
-console.log(wordsStartsWithA);
+
+array = [{ value: 1 }, { value: 2 }, { value: 3 }, { value: 4 }, { value: 5 }];
+
+var index = array.findIndex((item) => item.value === 3); // 2
+var index = array.findIndex((item) => item.value === 12); // -1
