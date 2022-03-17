@@ -1,20 +1,29 @@
-var result = ["one", "two", "three", "four"].map(function (value, index, arr) {
-  return value.length;
+var numbers = [5, 32, 43, 4];
+var odd = numbers.filter(function (n) {
+  return n % 2 !== 0;
 });
-console.log("result:", result);
+console.log("odd:", odd);
 
-var result = ["one", "two", "three", "four"].map((value) => value.length);
-console.log("result:", result);
+odd = numbers.filter((n) => n % 2 !== 0);
+console.log("odd:", odd);
 
-["one", "two"].map(function (value, index, arr) {
-  console.log(this); // window (the default value in browsers) return value.length;
-});
-
-["one", "two"].map(
-  function (value, index, arr) {
-    console.log(this); // Object { documentation: "randomObject" } return value.length;
+var people = [
+  { id: 1, name: "John", age: 28 },
+  {
+    id: 2,
+    name: "Jane",
+    age: 31,
   },
   {
-    documentation: "randomObject",
-  }
-);
+    id: 3,
+    name: "Peter",
+    age: 55,
+  },
+];
+var young = people.filter(function (person) {
+  return person.age < 35;
+});
+console.log("young:", young);
+
+var young = people.filter((person) => person.age < 35);
+console.log("young:", young);
