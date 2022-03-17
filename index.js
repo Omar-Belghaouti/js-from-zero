@@ -1,5 +1,9 @@
-var date1 = new Date();
-var date2 = new Date(date1.valueOf() + 5000);
-var dateDiff = date1.valueOf() - date2.valueOf();
-var dateDiffInYears = dateDiff / 1000 / 60 / 60 / 24 / 365; //convert milliseconds into years
-console.log("Date difference in years : " + dateDiffInYears);
+console.log("" == 0);
+console.log(0 == "0");
+console.log("" == "0");
+console.log(false == 0);
+console.log(false == "0");
+
+// objects are compared by reference, not value
+console.log(Number("0") == Number("0"));
+console.log(new Number("0") == new Number("0"));
