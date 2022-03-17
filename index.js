@@ -1,24 +1,22 @@
-// base 10 Number
-var b10 = 12;
-// base 16 String representation
-var b16 = b10.toString(16); // "c"
+var string = "Hello, World!";
 
-console.log(b16);
+console.log(string.indexOf("o"));
+console.log(string.indexOf("foo"));
 
-// base 16 String representation
-var b16 = "c";
-// base 10 Number
-var b10 = parseInt(b16, 16); // 12
+console.log(string.lastIndexOf("o"));
+console.log(string.lastIndexOf("foo"));
 
-console.log(b10);
+console.log(string.includes("Hello"));
+console.log(string.includes("foo"));
 
-var b16 = "3.243f3e0370cdc";
-// Split into integer and fraction parts
-var [i16, f16] = b16.split(".");
-// Calculate base 10 integer part
-var i10 = parseInt(i16, 16); // 3
-// Calculate the base 10 fraction part
-var f10 = parseInt(f16, 16) / Math.pow(16, f16.length); // 0.14158999999999988
-// Put the base 10 parts together to find the Number
-var b10 = i10 + f10; // 3.14159
-console.log(b10);
+string = string.replace("Hello", "Bye");
+console.log(string);
+
+string = string.replace(/W.{3}d/g, "Universe");
+console.log(string);
+
+var str = "heLlo, woRlD!";
+str = str.replace(/([a-zA-Z])([a-zA-Z]+)/g, function (match, g1, g2) {
+  return g1.toUpperCase() + g2.toLowerCase();
+});
+console.log(str);
