@@ -1,9 +1,11 @@
-console.log("abc".repeat(3));
+var date = Date();
+console.log(date);
 
-console.log("abc".repeat(0));
+date = new Date(749019369738);
+console.log(date);
 
-// console.log("abc".repeat(-1));
+date = Date("2022-03-17T13:07:51.730Z");
+console.log(date);
 
-var myString = "abc";
-var n = 3;
-console.log(new Array(n + 1).join("abc"));
+date = new Date(2022, 2, 18);
+console.log(date);
