@@ -1,9 +1,18 @@
-console.log("" == 0);
-console.log(0 == "0");
-console.log("" == "0");
-console.log(false == 0);
-console.log(false == "0");
+console.log(1 * "two" === NaN);
+console.log(NaN === 0);
+console.log(NaN === NaN);
+console.log(Number.NaN === NaN);
+console.log(NaN < 0);
+console.log(NaN > 0);
+console.log(NaN >= NaN);
+console.log(NaN >= "two");
 
-// objects are compared by reference, not value
-console.log(Number("0") == Number("0"));
-console.log(new Number("0") == new Number("0"));
+console.log(NaN !== 0);
+console.log(NaN !== NaN);
+
+console.log(Object.is(NaN, NaN));
+console.log(Object.is(+0, -0));
+
+console.log(+0 === -0);
+
+console.log(typeof NaN === "number");
