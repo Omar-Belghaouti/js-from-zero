@@ -1,73 +1,86 @@
-// Default sort
-var arr = [
-  "s",
-  "t",
-  "a",
-  34,
-  "K",
-  "o",
-  "v",
-  "E",
-  "r",
-  "2",
-  "4",
-  "o",
-  "W",
-  -1,
-  "-4",
-];
-arr.sort(); // sort method is impure
-console.log("arr:", arr);
+// For loops
+for (var i = 0, length = 10; i < length; i++) {
+  console.log(i);
+}
 
-// Alphabetical sort
-arr = ["s", "t", "a", "c", "K", "o", "v", "E", "r", "f", "l", "W", "2", "1"];
-arr.sort((a, b) => a.localeCompare(b));
-console.log("arr:", arr);
+var myArray = [1, 2, 3, 4, 5];
+for (let i = 0, length = myArray.length; i < length; i++) {
+  console.log(myArray[i]);
+}
 
-arr = ["s", "t", "a", "c", "K", 1, "v", "E", "r", "f", "l", "o", "W"];
-arr.sort((a, b) => a.toString().localeCompare(b));
-console.log("arr:", arr);
+for (var i = myArray.length - 1; i > -1; i--) {
+  console.log(myArray[i]);
+}
 
-// String sorting by length (longest first)
-arr = ["zebras", "dogs", "elephants", "penguins"];
-arr.sort((a, b) => b.length - a.length);
-console.log("arr:", arr);
+for (
+  var key = 0, value = myArray[key], length = myArray.length;
+  key < length;
+  value = myArray[++key]
+) {
+  console.log(value);
+}
 
-// String sorting by length (shortest first)
-arr = ["zebras", "dogs", "elephants", "penguins"];
-arr.sort((a, b) => a.length - b.length);
-console.log("arr:", arr);
+var i = 0,
+  length = myArray.length;
+for (; i < length; ) {
+  console.log(myArray[i]);
+  i++;
+}
 
-// Numerical sort (ascending)
-arr = [100, 1000, 10, 10000, 1];
-arr.sort((a, b) => a - b);
-console.log("arr:", arr);
+var key = 0,
+  value;
+for (; (value = myArray[key++]); ) {
+  console.log(value);
+}
 
-// Numerical sort (descending)
-arr = [100, 1000, 10, 10000, 1];
-arr.sort((a, b) => b - a);
-console.log("arr:", arr);
+// While loops
+var key = 0;
+while ((value = myArray[key++])) {
+  console.log(value);
+}
 
-// Sorting array by even and odd numbers
-arr = [10, 21, 4, 15, 7, 99, 0, 12];
-arr.sort((a, b) => (a & 1) - (b & 1) || a - b);
-console.log("arr:", arr);
+for (i in myArray) {
+  console.log(myArray[i]);
+}
 
-// Date sort (descending)
-var dates = [
-  new Date(2007, 11, 10),
-  new Date(2014, 2, 21),
-  new Date(2009, 6, 11),
-  new Date(2016, 7, 23),
-];
-dates.sort((a, b) => {
-  if (a > b) return -1;
-  if (a < b) return 1;
-  return 0;
+for (let value of myArray) {
+  let twoValue = value * 2;
+  console.log("2 * value is: %d", twoValue);
+}
+
+var myArray = [3, 5, 7];
+myArray.foo = "hello";
+for (var i in myArray) {
+  console.log(i); // logs 0, 1, 2, "foo"
+}
+for (var i of myArray) {
+  console.log(i); // logs 3, 5, 7
+}
+
+for (let i of myArray.keys()) {
+  let twoValue = myArray[i] * 2;
+  console.log("2 * value is: %d", twoValue);
+}
+
+myArray.forEach((value, index, arr) => {
+  var twoValue = value * 2;
+  console.log("2 * value is: %d", twoValue);
 });
-console.log("dates:", dates);
 
-dates.sort(function (a, b) {
-  return b - a;
+var myArray = [1, 2, 3, 4],
+  i = 0,
+  sum = 0;
+while (i++ < myArray.length) {
+  sum += i;
+}
+console.log(sum);
+
+[2, 4, 7, 9].every(function (value, index, arr) {
+  console.log(value);
+  return value % 2 === 0; // iterate until an odd number is found
 });
-console.log("dates:", dates);
+
+[2, 4, 7, 9].some(function (value, index, arr) {
+  console.log(value);
+  return value === 7; // iterate until we find value 7
+});
