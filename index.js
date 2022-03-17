@@ -1,24 +1,28 @@
-var year = new Date().getFullYear();
-console.log(year);
+var checkoutDate = new Date();
+checkoutDate.setDate(checkoutDate.getDate() + 1);
+console.log(checkoutDate);
 
-var month = new Date().getMonth();
-console.log(month);
+var checkoutDate = new Date();
+checkoutDate.setDate(checkoutDate.getDate() + 12);
+console.log(checkoutDate);
 
-var day = new Date().getDate();
-console.log(day);
+function addWorkDays(startDate, days) {
+  var dow = startDate.getDay();
+  var daysToAdd = days;
+  if (dow === 0) daysToAdd++;
+  if (dow + daysToAdd >= 6) {
+    var remainingWorkDays = daysToAdd - (5 - dow);
+    daysToAdd += 2;
+    if (remainingWorkDays > 5) {
+      daysToAdd += 2 * Math.floor(remainingWorkDays / 5);
+      if (remainingWorkDays % 5 === 0) {
+        daysToAdd -= 2;
+      }
+    }
+  }
+  startDate.setDate(startDate.getDate() + daysToAdd);
+  return startDate;
+}
 
-var hours = new Date().getHours();
-console.log(hours);
-
-var minutes = new Date().getMinutes();
-console.log(minutes);
-
-var seconds = new Date().getSeconds();
-console.log(seconds);
-
-var milliseconds = new Date().getMilliseconds();
-console.log(milliseconds);
-
-var now = new Date();
-// convert date to a string in UTC timezone format:
-console.log(now.toUTCString());
+var d = new Date();
+console.log(addWorkDays(d, 4));
