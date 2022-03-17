@@ -1,7 +1,3 @@
-var today = new Date().toLocaleDateString("en-GB", {
-  day: "numeric",
-  month: "short",
-  year: "numeric",
-});
+console.log(Date.now());
 
-console.log(today);
+console.log(new Date().getTime());
