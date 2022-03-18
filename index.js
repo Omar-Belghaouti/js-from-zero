@@ -1,8 +1,3 @@
-var obj = {};
-// Define 'foo' as read only and lock it
-Object.defineProperty(obj, "foo", {
-  value: "original value",
-  writable: false,
-  configurable: false,
-});
-Object.defineProperty(obj, "foo", { writable: true }); // TypeError
+var sampleObject = { hello: "world" };
+var res = Object.getOwnPropertyDescriptor(sampleObject, "hello");
+console.log(res);
