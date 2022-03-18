@@ -1,7 +1,27 @@
-var object = { key1: 10, key2: 3, key3: 40, key4: 20 };
-var array = [];
-for (var people in object) {
-  array.push([people, object[people]]);
-}
+// Some
+[false, false].some(function (value) {
+  return value;
+});
+// Result: false
+[false, true].some(function (value) {
+  return value;
+});
+// Result: true
+[true, true].some(function (value) {
+  return value;
+});
+// Result: true
 
-console.log(array);
+// Every
+[false, false].every(function (value) {
+  return value;
+});
+// Result: false
+[false, true].every(function (value) {
+  return value;
+});
+// Result: false
+[true, true].every(function (value) {
+  return value;
+});
+// Result: true
