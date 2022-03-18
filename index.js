@@ -1,8 +1,20 @@
-var array = [
-  ["key1", 10],
-  ["key2", 3],
-  ["key3", 40],
-  ["key4", 20],
+[1, 2, 1].every(function (item, i, list) {
+  return item === list[0];
+}); // false
+[1, 1, 1].every(function (item, i, list) {
+  return item === list[0];
+}); // true
+
+[1, 1, 1].every((item, i, list) => item === list[0]); // true
+
+let data = [
+  { name: "alice", id: 111 },
+  { name: "alice", id: 222 },
 ];
-array.sort((a, b) => a[1] - b[1]);
-console.log(array);
+data.every(function (item, i, list) {
+  return item === list[0];
+}); // false
+data.every(function (item, i, list) {
+  return item.name === list[0].name;
+}); // true
+data.every((item, i, list) => item.name === list[0].name); // true
