@@ -1,5 +1,8 @@
-var arr = [1, 2, 3];
-var index = 1;
-var item = 4;
-arr.splice(index, 0, item);
-console.log(arr);
+var array = [
+  ["key1", 10],
+  ["key2", 3],
+  ["key3", 40],
+  ["key4", 20],
+];
+array.sort((a, b) => a[1] - b[1]);
+console.log(array);
