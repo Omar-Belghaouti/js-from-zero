@@ -1,22 +1,35 @@
-var anObject = {
-  foo: "bar",
-  length: "interesting",
-  0: "zero!",
-  1: "one!",
+var obj = {
+  foo: "foo",
+  bar: function () {
+    return "bar";
+  },
 };
-var anArray = ["zero.", "one."];
+Object.seal(obj); // unlike Object.freeze(), this can make properties editable
+obj.newFoo = "newFoo";
+obj.bar = function () {
+  return "foo";
+};
+obj.newFoo; // undefined
+obj.bar(); // 'foo'
 
-console.log(anArray[0], anObject[0]); // outputs: zero. zero!
-console.log(anArray[1], anObject[1]); // outputs: one. one!
-console.log(anArray.length, anObject.length); // outputs: 2 interesting
-console.log(anArray.foo, anObject.foo); // outputs: undefined bar
+// Can't make foo an accessor property
+Object.defineProperty(obj, "foo", {
+  get: function () {
+    return "newFoo";
+  },
+}); // TypeError
 
-anArray.foo = "it works!";
-console.log(anArray.foo);
+// But you can make it read only
+Object.defineProperty(obj, "foo", {
+  writable: false,
+}); // TypeError
+obj.foo = "newFoo";
+obj.foo; // 'foo';
 
-anObject.length = 2; // Array-like object (List)
-
-console.log(typeof anArray == "object", typeof anObject == "object"); // outputs: true true
-console.log(anArray instanceof Object, anObject instanceof Object); // outputs: true true
-console.log(anArray instanceof Array, anObject instanceof Array); // outputs: true false
-console.log(Array.isArray(anArray), Array.isArray(anObject)); // outputs: true false
+// In strict mode
+(function () {
+  "use strict";
+  var obj = { foo: "foo" };
+  Object.seal(obj);
+  obj.newFoo = "newFoo"; // TypeError
+})();
