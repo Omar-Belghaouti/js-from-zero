@@ -1,30 +1,34 @@
-// Shift
-var array = [1, 2, 3, 4];
-array.shift();
-console.log(array);
+// Method 1
+var arr = [1, 2, 3, 4];
+arr = []; // reference a to a new array (memory leak)
+console.log(arr);
 
-// Pop
-var array = [1, 2, 3];
-array.pop();
-console.log(array);
+var count = 0;
+function addListener(arr) {
+  // arr is closed over
+  var b = document.body.querySelector("#foo" + count++);
+  b.addEventListener("click", function (e) {
+    // this functions reference keeps
+    // the closure current while the
+    // event is active
+    // do something but does not need arr
+  });
+}
+arr = ["big data"];
+var i = 100;
+while (i > 0) {
+  addListener(arr); // the array is passed to the function
+  arr = []; // only removes the reference, the original array remains
+  array.push("some large data"); // more memory allocated
+  i--;
+}
+// there are now 100 arrays closed over, each referencing a different array
+// no a single item has been deleted
 
-// Splice
-var array = [1, 2, 3, 4];
-array.splice(1, 2);
-console.log(array);
+// Method 2
+arr.length = 0;
 
-var array = [1, 2, 3, 4];
-var res = array.splice(2);
-console.log(array);
-console.log(res);
-
-// Delete
-var array = [1, 2, 3, 4, 5];
-console.log(array.length); // 5
-delete array[2];
-console.log(array); // [1, 2, undefined, 4, 5]
-console.log(array.length); // 5
-
-array = [1, 2, 3, 4, 5];
-array.length = 2;
-console.log(array); // [1, 2]
+// Method 3
+arr.splice(0); // should not use if you don't want the removed items
+// only use this method if you do the following
+var keepArr = arr.splice(0); // empties the array and creates a new array containing the removed items
