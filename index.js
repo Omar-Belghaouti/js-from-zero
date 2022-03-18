@@ -1,11 +1,29 @@
-var myObject = {};
+var myIterableObject = {};
+// An Iterable object must define a method located at the Symbol.iterator key:
+myIterableObject[Symbol.iterator] = function () {
+  // The iterator should return an Iterator object
+  return {
+    // The Iterator object must implement a method, next()
+    next: function () {
+      // next must itself return an IteratorResult object
+      if (!this.iterated) {
+        this.iterated = true;
+        // The IteratorResult object has two properties
+        return {
+          // whether the iteration is complete, and
+          done: false,
+          // the value of the current iteration value: 'One'
+        };
+      }
+      return {
+        // When iteration is complete, just the done property is needed
+        done: true,
+      };
+    },
+    iterated: false,
+  };
+};
 
-myObject["special property 😅"] = "it works!";
-console.log(myObject["special property 😅"]);
-
-myObject[123] = "hi!"; // number 123 is automatically converted to a string
-console.log(myObject["123"]); // notice how using string 123 produced the same result
-console.log(myObject["12" + "3"]); // string concatenation
-console.log(myObject[120 + 3]); // arithmetic, still resulting in 123 and producing the same result
-console.log(myObject[123.0]); // this works too because 123.0 evaluates to 123
-console.log(myObject["123.0"]); // this does NOT work, because '123' != '123.0'
+for (var c of myIterableObject) {
+  console.log(c);
+}
