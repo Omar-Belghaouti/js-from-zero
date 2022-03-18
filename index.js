@@ -1,23 +1,14 @@
-var obj = {};
-Object.defineProperty(obj, "foo", { value: "foo" });
-console.log(obj.foo);
-
-Object.defineProperty(obj, "nameOfTheProperty", {
-  value: "valueOfTheProperty",
-  writable: true, // if false, the property is read-only
-  configurable: true, // true means the property can be changed later
-  enumerable: true, // true means property can be enumerated such as in a for..in loop
-});
-
-console.log(obj);
-
-var obj2 = {};
-Object.defineProperties(obj2, {
-  property1: {
-    value: true,
-    writable: true,
+var person = { name: "John", surname: "Doe" };
+Object.defineProperty(person, "fullName", {
+  get: function () {
+    return this.name + " " + this.surname;
   },
-  property2: { value: "Hello", writable: false },
+  set: function (value) {
+    [this.name, this.surname] = value.split(" ");
+  },
 });
-
-console.log(obj2.property1);
+console.log(person.fullName); // -> "John Doe"
+person.surname = "Hill";
+console.log(person.fullName); // -> "John Hill"
+person.fullName = "Mary Jones";
+console.log(person.name); // -> "Mary"
