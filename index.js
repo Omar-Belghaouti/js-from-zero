@@ -1,24 +1,22 @@
-var dictionary = {
-  lettuce: "a veggie",
-  banana: "a fruit",
-  tomato: "it depends on who you ask",
-  apple: "a fruit",
-  Apple: "Steve Jobs rocks!", // properties are case-sensitive
+var anObject = {
+  foo: "bar",
+  length: "interesting",
+  0: "zero!",
+  1: "one!",
 };
+var anArray = ["zero.", "one."];
 
-console.log(dictionary["lettuce"]);
+console.log(anArray[0], anObject[0]); // outputs: zero. zero!
+console.log(anArray[1], anObject[1]); // outputs: one. one!
+console.log(anArray.length, anObject.length); // outputs: 2 interesting
+console.log(anArray.foo, anObject.foo); // outputs: undefined bar
 
-// console.log(dictionary.word); // doesn't work because word is taken literally and dictionary has no field named `word`
-// console.log(dictionary.apple); // it works! because apple is taken literally
-// console.log(dictionary[word]); // it works! because word is a variable, and the user perfectly typed in one of the words from our dictionary when prompted
-// console.log(dictionary[apple]); // error! apple is not defined (as a variable)
+anArray.foo = "it works!";
+console.log(anArray.foo);
 
-var property = "test";
-var obj = {
-  [property]: 1,
-};
-console.log(obj.test); //1
+anObject.length = 2; // Array-like object (List)
 
-var property = "test";
-var obj = {};
-obj[property] = 1;
+console.log(typeof anArray == "object", typeof anObject == "object"); // outputs: true true
+console.log(anArray instanceof Object, anObject instanceof Object); // outputs: true true
+console.log(anArray instanceof Array, anObject instanceof Array); // outputs: true false
+console.log(Array.isArray(anArray), Array.isArray(anObject)); // outputs: true false
