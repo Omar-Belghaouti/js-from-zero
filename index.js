@@ -1,7 +1,7 @@
-// Unshift
-var array = [3, 4, 5, 6];
-array.unshift(1, 2); // [1, 2, 3, 4, 5, 6]
+var object = { key1: 10, key2: 3, key3: 40, key4: 20 };
+var array = [];
+for (var people in object) {
+  array.push([people, object[people]]);
+}
 
-// Push
-var array = [1, 2, 3];
-array.push(4, 5, 6); // [1, 2, 3, 4, 5, 6]
+console.log(array);
