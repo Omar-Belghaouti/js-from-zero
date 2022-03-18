@@ -1,14 +1,25 @@
-const existing = { a: 1, b: 2, c: 3 };
-const clone = Object.assign({}, existing);
-console.log(clone);
+var obj = {
+  foo: "foo",
+  bar: [1, 2, 3],
+  baz: {
+    foo: "nested-foo",
+  },
+};
 
-const { ...clone2 } = existing;
-console.log(clone2);
+Object.freeze(obj);
 
-var clone3 = {};
-for (const prop in existing) {
-  if (existing.hasOwnProperty(prop)) {
-    clone3[prop] = existing[prop];
-  }
-}
-console.log(clone3);
+// Cannot add new properties
+obj.newProperty = true;
+
+// Cannot modify existing values or their descriptors
+obj.foo = "not foo";
+Object.defineProperty(obj, "foo", {
+  writable: true,
+});
+
+// Cannot delete existing properties
+delete obj.foo;
+
+// Nested objects are not frozen
+obj.bar.push(4);
+obj.baz.foo = "new foo";
