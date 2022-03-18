@@ -1,6 +1,23 @@
-let obj = { a: 1 };
-let obj2 = { ...obj, b: 2, c: 3 };
-console.log(obj2); // { a: 1, b: 2, c: 3 };
+var obj = {};
+Object.defineProperty(obj, "foo", { value: "foo" });
+console.log(obj.foo);
 
-let obj3 = { ...obj, b: { c: 2 } };
-console.log(obj3); // { a: 1, b: { c: 2 } };
+Object.defineProperty(obj, "nameOfTheProperty", {
+  value: "valueOfTheProperty",
+  writable: true, // if false, the property is read-only
+  configurable: true, // true means the property can be changed later
+  enumerable: true, // true means property can be enumerated such as in a for..in loop
+});
+
+console.log(obj);
+
+var obj2 = {};
+Object.defineProperties(obj2, {
+  property1: {
+    value: true,
+    writable: true,
+  },
+  property2: { value: "Hello", writable: false },
+});
+
+console.log(obj2.property1);
