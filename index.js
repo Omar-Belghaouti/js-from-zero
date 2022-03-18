@@ -1,20 +1,11 @@
-[1, 2, 1].every(function (item, i, list) {
-  return item === list[0];
-}); // false
-[1, 1, 1].every(function (item, i, list) {
-  return item === list[0];
-}); // true
+// Let's say we have this Array of Alphabets
+var arr = ["a", "b", "c", "d"];
+// I want an Array of the first two Alphabets
+var newArr = arr.slice(0, 2); // newArr === ["a", "b"]
 
-[1, 1, 1].every((item, i, list) => item === list[0]); // true
-
-let data = [
-  { name: "alice", id: 111 },
-  { name: "alice", id: 222 },
-];
-data.every(function (item, i, list) {
-  return item === list[0];
-}); // false
-data.every(function (item, i, list) {
-  return item.name === list[0].name;
-}); // true
-data.every((item, i, list) => item.name === list[0].name); // true
+// Let's say we have this Array of Numbers
+// and I don't know it's end
+var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+// I want to slice this Array starting from
+// number 5 to its end
+var newArr = arr.slice(4); // newArr === [4, 5, 6, 7, 8, 9]
