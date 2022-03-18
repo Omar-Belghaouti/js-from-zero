@@ -1,16 +1,7 @@
-// 2 Dimensional arrays
-function flattenES6(arr) {
-  return [].concat(...arr);
-}
-var arrL1 = [1, 2, [3, 4]];
-console.log(flattenES6(arrL1)); // [1, 2, 3, 4]
+// Unshift
+var array = [3, 4, 5, 6];
+array.unshift(1, 2); // [1, 2, 3, 4, 5, 6]
 
-function flatten(arr) {
-  return [].concat.apply([], arr);
-}
-var arrL1 = [1, 2, [3, 4]];
-console.log(flatten(arrL1)); // [1, 2, 3, 4]
-
-// Higher dimension arrays
-var deeplyNested = [4, [5, 6, [7, 8], 9]];
-console.log(String(deeplyNested).split(",").map(Number));
+// Push
+var array = [1, 2, 3];
+array.push(4, 5, 6); // [1, 2, 3, 4, 5, 6]
