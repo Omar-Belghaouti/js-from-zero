@@ -1,27 +1,13 @@
-// Some
-[false, false].some(function (value) {
-  return value;
-});
-// Result: false
-[false, true].some(function (value) {
-  return value;
-});
-// Result: true
-[true, true].some(function (value) {
-  return value;
-});
-// Result: true
+Array.isArray([]); // true
+Array.isArray([1, 2, 3]); // true
+Array.isArray({}); // false
+Array.isArray(1); // false
 
-// Every
-[false, false].every(function (value) {
-  return value;
-});
-// Result: false
-[false, true].every(function (value) {
-  return value;
-});
-// Result: false
-[true, true].every(function (value) {
-  return value;
-});
-// Result: true
+[] instanceof Array; // true
+var obj = {};
+obj instanceof Array; // false
+
+var arr = [];
+Object.setPrototypeOf(arr, null);
+Array.isArray(arr); // true
+arr instanceof Array; // false
