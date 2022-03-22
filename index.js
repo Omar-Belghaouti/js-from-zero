@@ -1,23 +1,21 @@
-var a = 9,
-  b = 3,
-  c = a + b;
+var isLittleEndian = true;
+(() => {
+  var buf = new ArrayBuffer(4);
+  var buf8 = new Uint8ClampedArray(buf);
+  var data = new Uint32Array(buf);
+  data[0] = 0x0f000000;
+  if (buf8[0] === 0x0f) {
+    isLittleEndian = false;
+  }
+})();
+console.log(isLittleEndian);
 
-var a = 9,
-  b = 3,
-  c = 8,
-  d = a + b + c;
-
-null + null; // 0
-null + undefined; // NaN
-null + {}; // "null[object Object]"
-null + ""; // "null"
-
-"123" + 1; // "1231" (not 124)
-
-true + 1; // 2
-false + 5; // 5
-null + 1; // 1
-undefined + 1; // NaN
-
-true + "1"; // "true1"
-false + "bar"; // "falsebar"
+var myNum = 0x11223344 | 0; // 32 bit signed integer
+var buf = new ArrayBuffer(4);
+var data8 = new Uint8ClampedArray(buf);
+var data32 = new Uint32Array(buf);
+data32[0] = myNum; // store number in 32Bit array
+console.log(data8[0].toString(16)); // 0x44
+console.log(data8[1].toString(16)); // 0x33
+console.log(data8[2].toString(16)); // 0x22
+console.log(data8[3].toString(16)); // 0x11
