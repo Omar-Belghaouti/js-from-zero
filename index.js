@@ -1,9 +1,7 @@
-//postfix
-var a = 5, // 5
-  b = a++, // 5
-  c = a; // 6
+var a = 2,
+  b = 3,
+  c = Math.pow(a, b);
 
-//prefix
-var a = 5, // 5
-  b = ++a, // 6
-  c = a; // 6
+let a = 2,
+  b = 3,
+  c = a ** b;
