@@ -1,13 +1,23 @@
-var a = Math.random();
+var a = 9,
+  b = 3,
+  c = a + b;
 
-function getRandomArbitrary(min, max) {
-  return Math.random() * (max - min) + min;
-}
+var a = 9,
+  b = 3,
+  c = 8,
+  d = a + b + c;
 
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
-}
+null + null; // 0
+null + undefined; // NaN
+null + {}; // "null[object Object]"
+null + ""; // "null"
 
-function getRandomIntInclusive(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+"123" + 1; // "1231" (not 124)
+
+true + 1; // 2
+false + 5; // 5
+null + 1; // 1
+undefined + 1; // NaN
+
+true + "1"; // "true1"
+false + "bar"; // "falsebar"
