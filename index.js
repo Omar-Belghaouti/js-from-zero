@@ -1,7 +1,13 @@
-var a = 2,
-  b = 3,
-  c = Math.pow(a, b);
+var a = Math.random();
 
-let a = 2,
-  b = 3,
-  c = a ** b;
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function getRandomIntInclusive(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
